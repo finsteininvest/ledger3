@@ -6,7 +6,7 @@ I believe the original author »[mafm](https://github.com/mafm)« has dropped su
 
 I will maintain this code - It is in production use for my personal businesses.
 
-**Ledger.py** is a simple, command-line, double-entry accounting
+**ledger3.py** is a simple, command-line, double-entry accounting
 system. It reads transactions written in a simple format from a text
 file and produces summary reports as text or an excel spreadsheet.
 
@@ -14,12 +14,12 @@ Because transaction data is stored as text, it can be managed
 using a version control system like git. This makes it easy
 to maintain an audit trail.
 
-Ledger.py is like John Wiegley's
-[Ledger](http://www.ledger-cli.org/), but [simpler](https://github.com/mafm/ledger.py/blob/master/doc/Ledger.md).
+ledger3.py is like John Wiegley's
+[Ledger](http://www.ledger-cli.org/), but [simpler](https://github.com/mafm/ledger3.py/blob/master/doc/Ledger.md).
 
 ## What it does
 
-Ledger.py reads an input file that's written in a simple file like this:
+ledger3.py reads an input file that's written in a simple file like this:
 ```
 2013-01-01 I began the year with $1000 in my cheque account.
   Assets:Bankwest:Cheque      $1,000
@@ -42,7 +42,7 @@ VERIFY-BALANCE 2013-02-01 Assets:Bankwest:Cheque 621.05
 ```
 and produces reports like this:
 ```
-$./ledger.py examples/sample.transactions --print-balances
+$./ledger3.py examples/sample.transactions --print-balances
    $621.05 Assets:Bankwest:Cheque
  $1,000.00 Equity:OpeningBalances
    $436.96 Expenses
@@ -53,7 +53,7 @@ $./ledger.py examples/sample.transactions --print-balances
 ```
 or this:
 ```
-$./ledger.py examples/sample.transactions --print-balances --first-date 2013-01-05 --last-date 2013-01-15
+$./ledger3.py examples/sample.transactions --print-balances --first-date 2013-01-05 --last-date 2013-01-15
  2013-01-05 2013-01-15   Change Account
     $901.47    $621.05 -$280.42 Assets:Bankwest:Cheque
   $1,000.00  $1,000.00    $0.00 Equity:OpeningBalances
@@ -65,7 +65,7 @@ $./ledger.py examples/sample.transactions --print-balances --first-date 2013-01-
 ```
 or this:
 ```
-$./ledger.py examples/sample.transactions --print-register Expenses
+$./ledger3.py examples/sample.transactions --print-register Expenses
 2013-01-05	 $98.53	 $98.53	Expenses:Food:Groceries	I bought some groceries and paid using the cheque account.
 2013-01-10	$156.54	 $58.01	Expenses:Motor:Fuel    	I bought some petrol, and paid using a credit card.
 2013-01-15	$436.96	$280.42	Expenses:Electricity   	I paid my electricity bill.
@@ -74,25 +74,25 @@ $./ledger.py examples/sample.transactions --print-register Expenses
 The program is currently contained in a single python file. You can grab it and try it out like this:
 ```
 # Grab the code
-git clone git://github.com/mafm/ledger.py
-cd ledger.py
+git clone git://github.com/mafm/ledger3.py
+cd ledger3.py
 
 # Generate some example reports
-./ledger.py examples/sample.transactions --print-balances
-./ledger.py examples/sample.transactions --print-register Expenses
-./ledger.py examples/sample.transactions --print-register Expenses:Electricity
+./ledger3.py examples/sample.transactions --print-balances
+./ledger3.py examples/sample.transactions --print-register Expenses
+./ledger3.py examples/sample.transactions --print-register Expenses:Electricity
 ```
 
-There is documentation outlining how to use the ledger.py in the
-[Introduction](https://github.com/mafm/ledger.py/blob/master/doc/Introduction.md)
+There is documentation outlining how to use the ledger3.py in the
+[Introduction](https://github.com/mafm/ledger3.py/blob/master/doc/Introduction.md)
 file in the doc folder.
 
 ### Requirements
 
-As far as I know, ledger.py needs only Python 2.7. I am currently
+As far as I know, ledger3.py needs only Python 2.7. I am currently
 using it with Python 2.7.2+.
 
-It would be nice to package ledger.py as a pip package, but that
+It would be nice to package ledger3.py as a pip package, but that
 hasn't been done yet.
 
 #### Testing
@@ -114,9 +114,9 @@ or two of the missing features per week.
 
 ## Origins
 
-Ledger.py is similar to, and partly inspired by, John Wiegley's Ledger: http://www.ledger-cli.org/.
+ledger3.py is similar to, and partly inspired by, John Wiegley's Ledger: http://www.ledger-cli.org/.
 
-Ledger.py is also similar to some older double-entry accounting
+ledger3.py is also similar to some older double-entry accounting
 software I wrote using wxPython in 2004. Although that program had a GUI, and
-I used it for nearly ten years, it was more complex than ledger.py,
+I used it for nearly ten years, it was more complex than ledger3.py,
 and I found it less convenient to use.
