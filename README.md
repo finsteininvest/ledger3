@@ -1,4 +1,10 @@
-# Ledger.py: command-line, double-entry accounting in python
+# Ledger3.py: command-line, double-entry accounting in python
+
+I copied the code and this readme from the [original](https://github.com/finsteininvest/ledger/tree/master).
+
+I believe the original author »[mafm](https://github.com/mafm)« has dropped support for the original code. I sent it through [2to3.py](https://docs.python.org/2/library/2to3.html) so that it runs with Python 3.
+
+I will maintain this code - It is in production use for my personal businesses.
 
 **Ledger.py** is a simple, command-line, double-entry accounting
 system. It reads transactions written in a simple format from a text
