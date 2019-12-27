@@ -15,7 +15,7 @@ using a version control system like git. This makes it easy
 to maintain an audit trail.
 
 ledger3.py is like John Wiegley's
-[Ledger](http://www.ledger-cli.org/), but [simpler](https://github.com/mafm/ledger3.py/blob/master/doc/Ledger.md).
+[Ledger](http://www.ledger-cli.org/), but [simpler](https://github.com/mafm/ledger.py/blob/master/doc/Ledger.md).
 
 ## What it does
 
