@@ -121,16 +121,18 @@ def parse_amount(amount_string):
     # Special case for no unit/ccy
     if amount_string == "-":
         return {}
-
-    quantity = int(round(float(amount_string.translate(None, "$,")) * 100.0))
+    amount_string = amount_string.replace('$','')
+    amount_string = amount_string.replace(',','.')
+    quantity = int(round(float(amount_string) * 100.0))
 
     return {'units': 'AUD',
             'quantity': quantity}
 
 def parse_amount_adjusting_sign(account_string, amount_string):
     "Parse amount_string, adjust sign depending on account_string."
-
-    quantity = int(round(float(amount_string.translate(None, "$,")) * 100.0))
+    amount_string = amount_string.replace('$','')
+    amount_string = amount_string.replace(',','.')
+    quantity = int(round(float(amount_string) * 100.0))
     quantity *= sign_account(account_string)
 
     return {'units': 'AUD',
@@ -496,7 +498,7 @@ def parse_posting(line_number, line, adjust_sign):
     line = line.strip()
     split = line.split()
     account_string = split[0]
-    amount_string = split[1].translate(None, "$")
+    amount_string = split[1].replace("$","")
 
     if not is_valid_account_string(account_string):
         sys.stderr.write("Line %d: invalid account string: '%s'.\n" %
